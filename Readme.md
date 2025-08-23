@@ -1,4 +1,4 @@
-# Vision Board Object Extractor - Enhanced Grouping
+# Vision Board Object Extractor v4 - Enhanced Grouping
 
 A sophisticated computer vision tool that automatically detects and extracts meaningful objects from vision board images. The tool has evolved from simple box detection to intelligent object grouping that keeps related elements (like text characters) together as coherent units.
 
