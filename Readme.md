@@ -1,4 +1,4 @@
-# Vision Board Object Extractor V4 - Enhanced Grouping
+# Vision Board Object Extractor - Enhanced Grouping
 
 A sophisticated computer vision tool that automatically detects and extracts meaningful objects from vision board images. The tool has evolved from simple box detection to intelligent object grouping that keeps related elements (like text characters) together as coherent units.
 
@@ -18,22 +18,26 @@ A sophisticated computer vision tool that automatically detects and extracts mea
 
 The V4 algorithm represents a significant advancement in object detection methodology:
 
-1. **Advanced Preprocessing**: 
+1. **Advanced Preprocessing**:
+
    - Bilateral filtering to reduce noise while preserving edges
    - Multi-scale edge detection using different Canny thresholds
    - Combined edge-based and adaptive threshold approaches
 
 2. **Intelligent Contour Processing**:
+
    - Initial contour detection using external contours only
    - Size-based filtering to remove obvious noise
    - DBSCAN clustering to group spatially related contours
 
 3. **Fragment Detection and Removal**:
+
    - Identifies small objects that are likely fragments of larger ones
    - Uses spatial proximity and overlap analysis
    - Removes corner artifacts and partial object detections
 
 4. **Object Validation**:
+
    - Multi-criteria validation including area, dimensions, and aspect ratio
    - Border proximity checking to avoid edge artifacts
    - Adaptive thresholds based on image characteristics
@@ -61,16 +65,19 @@ for obj in result['objects']:
 ## Key Functions
 
 ### Core Processing Functions
+
 - `process_vision_board()`: Main processing function that orchestrates the entire pipeline
 - `extract_objects_from_vision_board_base64()`: Core extraction logic with enhanced grouping
 - `create_object_mask()`: Advanced mask creation using multiple detection methods
 
 ### Intelligent Grouping Functions
+
 - `group_nearby_contours()`: DBSCAN-based clustering of spatially related contours
 - `filter_corner_fragments()`: Removes artifacts and partial detections
 - `merge_contour_group()`: Creates unified bounding boxes for grouped contours
 
 ### Utility Functions
+
 - `display_base64_image()`: Display images in Jupyter notebooks with adjustable sizing
 - `save_objects_to_files()`: Save extracted objects as individual image files
 - `image_file_to_base64()`: Convert local images to base64 format
@@ -89,6 +96,7 @@ for obj in result['objects']:
 ## Example Output
 
 The tool returns a dictionary containing:
+
 - `session_id`: Unique identifier for the processing session
 - `filename`: Original filename reference
 - `num_objects_found`: Number of meaningful objects detected and extracted
@@ -97,6 +105,7 @@ The tool returns a dictionary containing:
 ## Evolution and Improvements
 
 ### V4 Enhanced Grouping Features:
+
 - **Intelligent Text Grouping**: Characters and words are now grouped together rather than extracted as individual letters
 - **Fragment Detection**: Advanced algorithms identify and filter out corner artifacts and partial object detections
 - **DBSCAN Clustering**: Machine learning-based spatial clustering groups related contours automatically
@@ -104,9 +113,11 @@ The tool returns a dictionary containing:
 - **Enhanced Validation**: More sophisticated criteria for determining valid objects, including spatial relationship analysis
 
 ### Debug Mode Visualization:
+
 The debug mode now provides comprehensive visualization of the detection pipeline:
+
 - Original image display
-- Object detection mask visualization  
+- Object detection mask visualization
 - Contour detection results
 - Final grouped objects with bounding boxes
 - Step-by-step processing information
